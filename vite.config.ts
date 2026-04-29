@@ -1,5 +1,16 @@
-// Vite configuration for TanStack Start project
+import { defineConfig } from "vite";
+import { tanstackStart } from "@tanstack/react-start/plugin/vite";
+import { tanstackRouter } from "@tanstack/router-plugin/vite";
+import react from "@vitejs/plugin-react";
+import tsconfigPaths from "vite-tsconfig-paths";
+import tailwindcss from "@tailwindcss/vite";
 
-import { defineConfig } from "@lovable.dev/vite-tanstack-config";
-
-export default defineConfig();
+export default defineConfig({
+  plugins: [
+    tanstackRouter(),
+    tanstackStart(),
+    react(),
+    tsconfigPaths(),
+    tailwindcss(),
+  ],
+});
